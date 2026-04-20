@@ -3,3 +3,7 @@ import sqlite from "sqlite3"
 import bcrypt from "bcrypt"
 
 let db;
+
+export function getDb(){
+    return db;
+}
