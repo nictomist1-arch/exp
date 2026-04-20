@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { initDb } from './database/database.js';
 
 import pageRouter from "./routers/pages.js";
 import apiRouter from "./routers/api.js";
@@ -10,6 +11,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3000;
+
+await initDb()
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
